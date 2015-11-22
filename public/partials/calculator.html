@@ -1,0 +1,17 @@
+<h2>Mini Calculator</h2>
+<br>
+<h5>Operations <select ng-model="sign">
+  <option value='-'> - </option>
+  <option value= '+'> + </option>
+  <option value= '/'> / </option>
+  <option value= '*'> * </option>
+</select>
+</h5>
+<h5>Number 1 <input type="number" ng-model="value.one"></h5>
+<h5>Number 2 <input type="number" ng-model="value.two"></h5>
+<br>
+<button type="submit" class="btn btn-success" ng-click='calculator(sign, value.one, value.two)'>Submit</button>
+<br>
+<br>
+<h5>Your Value is {{result}}</h5>
+
