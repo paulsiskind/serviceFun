@@ -1,1 +1,22 @@
-<h1>To Do</h1>
+<h1>Add a New Todo</h1>
+<br>
+<br>
+<form novalidate class="css-form">
+  <input type="text" class="form-control" ng-model="list.info" required>
+  <br>
+   <input type="hidden" ng-model="list.id" />
+  <button class="btn btn-success" ng-click="submit()">Submit</button>
+</form>  
+<br>
+<h1>All Your Todos</h1>
+<br>
+<div class="well" ng-repeat="todo in todos">
+ <form>
+  <p>{{todo}} <button class="btn btn-primary" ng-click="showme=true">Update<button>
+  <button class="btn btn-danger" ng-click="delete(todo.id)">Delete</button>
+ </form> 
+  </p>
+  <form ng-show="showme">
+    <input type="text"><button class="btn btn-success" ng-model="list.info"  ng-click="update(); showme=false">Update</button>
+  </form>
+</div>

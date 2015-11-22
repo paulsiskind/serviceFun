@@ -10,6 +10,21 @@ var app = angular.module("learningServices", ['ngRoute'])
         case '*': $scope.result = firstService.multiply(a,b); break;
       }
     }
+     $scope.todos = firstService.info()
+
+    $scope.submit = function(){
+      firstService.save($scope.list)
+
+      $scope.list = '';
+    }
+    $scope.delete = function(id){
+      firstService.delete(id);
+      if($scope.list.id == id) $scope.list={};
+    }
+    $scope.edit = function(id){
+    $scope.list = angular.copy(firstService.get(id))
+    $scope.list = '';
+    }
    })
 
 
